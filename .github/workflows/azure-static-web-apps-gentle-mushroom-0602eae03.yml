@@ -31,6 +31,12 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env: NEXT_PUBLIC_SANITY_DATASET=dev
+          NEXT_PUBLIC_SANITY_PROJECT_ID=${{ secrets.NEXT_PUBLIC_SANITY_PROJECT_ID }}
+          SANITY_API_TOKEN=${{ secrets.SANITY_API_TOKEN }}
+          NEXT_PUBLIC_SANITY_API_READ_TOKEN=${{ secrets.NEXT_PUBLIC_SANITY_API_READ_TOKEN }}
+          NEXT_PUBLIC_SANITY_STUDIO_PREVIEW_SECRET=${{ secrets.NEXT_PUBLIC_SANITY_STUDIO_PREVIEW_SECRET }}
+          NEXT_PUBLIC_SANITY_STUDIO_REVALIDATE_SECRET=${{ secrets.NEXT_PUBLIC_SANITY_STUDIO_REVALIDATE_SECRET }}
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
