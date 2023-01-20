@@ -36,6 +36,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(_: any) {
+  // touch
   const article = await sanityClient.fetch(query, { slug: "testartikkel" });
   return {
     props: {
